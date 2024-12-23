@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Base URL of the API
-BASE_URL="http://localhost:3000/api"
+# BASE_URL="http://localhost:3000/api"
+BASE_URL=${BASE_URL:-http://localhost:3000/api}
 
 # Colors for output
 GREEN='\033[0;32m'

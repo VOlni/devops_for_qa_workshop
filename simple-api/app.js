@@ -1,9 +1,10 @@
 const express = require('express');
 const path = require('path');
-const app = express();
 const bodyParser = require('body-parser');
 const userRoutes = require('./routes/users');
+const config = require("./config"); // Import config.js
 
+const app = express();
 // Middleware
 app.use(bodyParser.json());
 

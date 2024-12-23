@@ -1,0 +1,17 @@
+# Use a minimal base image with bash and curl
+FROM alpine:latest
+
+# Install curl
+RUN apk add --no-cache curl bash
+
+# Set a default value for BASE_URL, can be overridden at runtime
+ENV BASE_URL=http://localhost:3000
+
+# Copy the API tests script into the container
+COPY api_tests.sh /api_tests.sh
+
+# Make the script executable
+RUN chmod +x /api_tests.sh
+
+# Set the default command to run the tests
+CMD ["/api_tests.sh"]

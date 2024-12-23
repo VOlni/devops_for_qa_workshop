@@ -1,0 +1,14 @@
+name: CI Tests in Docker Pipeline
+
+on:
+    push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build and Run Tests in Docker
+        run: |
+          docker build -t simple-user-api-tests .
+          docker run --rm simple-user-api-tests
