@@ -21,7 +21,5 @@ jobs:
         run: npm install
       - name: Run tests
         run: npm test
-        # on:
-        #   schedule:
-        #     - cron: '0 3 * * *' # Run daily at 3 AM UTC
+
         
